@@ -19,7 +19,7 @@ def plot_waveform_and_specgram(waveform, sample_rate, title):
     num_frames = waveform.shape[-1]
     time_axis = torch.arange(0, num_frames) / sample_rate
 
-    figure, (ax1, ax2) = plt.subplots(1, 2)
+    figure, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 6))
 
     ax1.plot(time_axis, waveform, linewidth=1)
     ax1.grid(True)

@@ -13,7 +13,7 @@ import torch
 def convert(checkpoint: str, outdir: str, suffix: str = "base"):
     """Convert the checkpoint to generator and detector"""
     outdir_path = Path(outdir)
-    ckpt = torch.load(checkpoint)
+    ckpt = torch.load(checkpoint, weights_only=False)
 
     # keep inference-related params only
     infer_cfg = {
